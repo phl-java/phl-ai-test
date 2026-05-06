@@ -10,7 +10,9 @@
       "Bash(git push *)",
       "Bash(git ls-remote *)",
       "Bash(ssh -T -p 443 git@ssh.github.com)",
-      "Bash(nc *)"
+      "Bash(nc *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
