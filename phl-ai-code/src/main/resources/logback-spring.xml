@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <!-- 应用名称 -->
+    <property name="APP_NAME" value="phl-ai-code"/>
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 项目核心包日志级别 -->
+    <logger name="com.phl.phlaicode" level="INFO"/>
+    
+    <!-- AI 相关详细日志 -->
+    <logger name="com.phl.phlaicode.ai" level="INFO"/>
+    <logger name="com.phl.phlaicode.core" level="INFO"/>
+    <logger name="dev.langchain4j" level="INFO"/>
+    
+    <!-- Redis 连接日志 -->
+    <logger name="io.lettuce.core" level="INFO"/>
+    
+    <!-- MySQL 连接日志 -->
+    <logger name="com.mysql.cj" level="INFO"/>
+    
+    <!-- Spring Web 请求日志 -->
+    <logger name="org.springframework.web" level="INFO"/>
+
+    <!-- 根日志级别 -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
